@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none; /* Запрет выделения текста */
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+body {
+    overflow: hidden;
+    background-color: #000;
+    font-family: sans-serif;
+    touch-action: none; /* Запрет системных жестов */
+}
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+#start-screen {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#start-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#ui-container {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none; /* Пропускаем клики сквозь контейнер */
+    z-index: 10;
+    display: none; /* Показываем после старта */
+}
+
+#look-zone {
+    position: absolute;
+    top: 0; right: 0;
+    width: 50vw; height: 100vh;
+    pointer-events: auto;
+}
+
+#joystick-zone {
+    position: absolute;
+    bottom: 20px; left: 20px;
+    width: 120px; height: 120px;
+    pointer-events: auto;
+}
+
+#joystick-base {
+    width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: relative;
+}
+
+#joystick-stick {
+    width: 50px; height: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: 35px; left: 35px; /* Центрирование (120/2 - 50/2) */
+}
+
+#interact-btn {
+    position: absolute;
+    bottom: 40px; right: 40px;
+    width: 70px; height: 70px;
+    background: rgba(200, 200, 200, 0.5);
+    color: #000;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    pointer-events: auto;
+    display: none; /* Показывается только вблизи объектов */
+}
+
+#screamer-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 50;
+    display: none;
+    pointer-events: none;
+}
