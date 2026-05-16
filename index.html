@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Блокировка масштабирования и прокрутки для мобильных устройств -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mobile 3D Horror</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Настройка импорта Three.js через CDN -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Стартовый экран для инициализации AudioContext (политика браузеров) -->
+    <div id="start-screen">
+        <h1>DOORS CLONE</h1>
+        <p>Наденьте наушники</p>
+        <button id="start-btn">НАЧАТЬ ИГРУ</button>
+    </div>
+
+    <!-- Интерфейс управления -->
+    <div id="ui-container">
+        <!-- Зона управления камерой (правая часть экрана) -->
+        <div id="look-zone"></div>
+        
+        <!-- Джойстик для ходьбы (левый нижний угол) -->
+        <div id="joystick-zone">
+            <div id="joystick-base">
+                <div id="joystick-stick"></div>
+            </div>
+        </div>
+
+        <!-- Кнопка взаимодействия -->
+        <button id="interact-btn">E</button>
+    </div>
+
+    <!-- Канвас для скримера поверх 3D -->
+    <canvas id="screamer-canvas"></canvas>
+
+    <!-- Подключение основного игрового скрипта как модуля -->
+    <script type="module" src="game.js"></script>
+</body>
+</html>
